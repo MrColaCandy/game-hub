@@ -8,7 +8,7 @@ interface Props {
 const CardContainer = ({ children }: Props) => {
   return (
     <Box
-      width={"450px"}
+      width={"400px"}
       height={"400px"}
       borderRadius={10}
       boxSizing="border-box"

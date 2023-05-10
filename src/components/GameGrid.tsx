@@ -1,10 +1,9 @@
 import { GridItem, SimpleGrid, Text } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
-import GameCardSkeleton from "./GameCardSkeleton";
 
 const GameGrid = () => {
-  const { error, games } = useGames();
+  const { data, error } = useGames();
   return (
     <>
       {error && <Text>{error}</Text>}
@@ -13,7 +12,7 @@ const GameGrid = () => {
         spacing={"10px"}
         padding={"10px"}
       >
-        {games.map((item) => (
+        {data.map((item) => (
           <GridItem key={item.id}>
             <GameCard game={item} />
           </GridItem>
